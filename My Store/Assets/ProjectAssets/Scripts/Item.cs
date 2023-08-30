@@ -1,22 +1,37 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Code.Helpers;
 using UnityEngine;
-
-public class Item : MonoBehaviour
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
+[Serializable]
+public class Item : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public ItemData Data;
     public ItemType Type;
-    public Sprite Icon;
+    public string IconName;
 
-    // Start is called before the first frame update
-    void Start()
+    public void SetItem(ItemData data, ItemType type, string icon)
     {
-        
+        Data = data;
+        Type = type;
+        IconName = icon;
+        transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>(IconName);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SelectItem()
     {
-        
+        GameController.Instance.UiController.ShopPanel.SelectItem(this);
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        //throw new System.NotImplementedException();
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        //throw new System.NotImplementedException();
     }
 }

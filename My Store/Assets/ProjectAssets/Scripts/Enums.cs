@@ -10,10 +10,16 @@ public class Enums
 public enum ItemType
 {
     Clothing,
-    Drink
+    Consumable
 }
 
 public enum ClothingType
 {
 
+}
+
+public enum ShopPanelType
+{
+    Buy,
+    Sell
 }
