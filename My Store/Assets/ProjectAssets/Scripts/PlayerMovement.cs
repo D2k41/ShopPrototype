@@ -23,13 +23,6 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         playerStats = GetComponent<PlayerStats>();
-
-        WalkIn();
-    }
-
-    private void WalkIn()
-    {
-        rb.DOMoveY(transform.position.y + .5f, 1);
     }
 
     private void Update()
