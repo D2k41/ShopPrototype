@@ -25,8 +25,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 581790084032898962}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.1388889, y: -0.08000016, z: 0}
-  m_LocalScale: {x: 0.5555556, y: 2, z: 1}
+  m_LocalPosition: {x: -0.23999998, y: -0.08000016, z: 0}
+  m_LocalScale: {x: 0.6666667, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1054150895874520557}
@@ -120,7 +120,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.272, y: 0.155}
+  m_AnchoredPosition: {x: 0.05, y: 0.155}
   m_SizeDelta: {x: 0.5868, y: 0.2607}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &4909465870362822439
@@ -143,7 +143,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2233597829992750613, guid: e21f499efbb6f4649be2da7e9439641c, type: 2}
+  - {fileID: 4811932035813076390, guid: 0fb6a82689ccecb4ca6b28dfb6281950, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -185,10 +185,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: To Buy
+  m_text: To buy
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e21f499efbb6f4649be2da7e9439641c, type: 2}
-  m_sharedMaterial: {fileID: 2233597829992750613, guid: e21f499efbb6f4649be2da7e9439641c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0fb6a82689ccecb4ca6b28dfb6281950, type: 2}
+  m_sharedMaterial: {fileID: 4811932035813076390, guid: 0fb6a82689ccecb4ca6b28dfb6281950, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -292,7 +292,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.297, y: 0.15499985}
+  m_AnchoredPosition: {x: 0.05, y: 0.15499985}
   m_SizeDelta: {x: 0.5868, y: 0.2607}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &65786086714115685
@@ -315,7 +315,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2233597829992750613, guid: e21f499efbb6f4649be2da7e9439641c, type: 2}
+  - {fileID: 4811932035813076390, guid: 0fb6a82689ccecb4ca6b28dfb6281950, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -357,10 +357,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: To Sell
+  m_text: To sell
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e21f499efbb6f4649be2da7e9439641c, type: 2}
-  m_sharedMaterial: {fileID: 2233597829992750613, guid: e21f499efbb6f4649be2da7e9439641c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0fb6a82689ccecb4ca6b28dfb6281950, type: 2}
+  m_sharedMaterial: {fileID: 4811932035813076390, guid: 0fb6a82689ccecb4ca6b28dfb6281950, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -454,8 +454,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4166337668024047172}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.1388889, y: -0.08000016, z: 0}
-  m_LocalScale: {x: 0.5555556, y: 2, z: 1}
+  m_LocalPosition: {x: 0.24, y: -0.08000016, z: 0}
+  m_LocalScale: {x: 0.6666667, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2776291745876096946}
@@ -733,7 +733,7 @@ Transform:
   m_GameObject: {fileID: 4617154617457757565}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.26, z: 0}
-  m_LocalScale: {x: 1.8, y: 0.5, z: 1}
+  m_LocalScale: {x: 1.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4145869511852895861}

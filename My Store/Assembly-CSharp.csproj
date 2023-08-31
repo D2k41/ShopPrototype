@@ -58,19 +58,19 @@
   <ItemGroup>
     <Compile Include="Assets\ProjectAssets\Scripts\Item.cs" />
     <Compile Include="Assets\ProjectAssets\Scripts\Enums.cs" />
+    <Compile Include="Assets\ProjectAssets\Scripts\GameController.cs" />
     <Compile Include="Assets\ProjectAssets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\ProjectAssets\Scripts\PlayerInventory.cs" />
+    <Compile Include="Assets\ProjectAssets\Scripts\ObjectCloning.cs" />
     <Compile Include="Assets\ProjectAssets\Scripts\PlayerStats.cs" />
-    <Compile Include="Assets\ProjectAssets\Scripts\Shop.cs" />
-    <Compile Include="Assets\ProjectAssets\Scripts\ItemData.cs" />
+    <Compile Include="Assets\ProjectAssets\Scripts\UiController.cs" />
+    <Compile Include="Assets\ProjectAssets\Scripts\MonoSingleton.cs" />
+    <Compile Include="Assets\ProjectAssets\Scripts\PlayerInteraction.cs" />
     <Compile Include="Assets\ProjectAssets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\ProjectAssets\Scripts\Merchant.cs" />
-    <Compile Include="Assets\ProjectAssets\Scripts\PlayerInteraction.cs" />
-    <Compile Include="Assets\ProjectAssets\Scripts\MonoSingleton.cs" />
-    <Compile Include="Assets\ProjectAssets\Scripts\GameController.cs" />
-    <Compile Include="Assets\ProjectAssets\Scripts\UiController.cs" />
+    <Compile Include="Assets\ProjectAssets\Scripts\Shop.cs" />
+    <Compile Include="Assets\ProjectAssets\Scripts\ItemData.cs" />
     <Compile Include="Assets\ProjectAssets\Scripts\ShopPanelController.cs" />
-    <Compile Include="Assets\ProjectAssets\Scripts\ObjectCloning.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
