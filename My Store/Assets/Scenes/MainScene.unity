@@ -2295,9 +2295,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1402157647}
     m_Modifications:
+    - target: {fileID: 1212319030923969675, guid: 6ef2f079d18fd6f42a90e925d456b4de, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 30.723633
+      objectReference: {fileID: 0}
     - target: {fileID: 6660201232222705841, guid: 6ef2f079d18fd6f42a90e925d456b4de, type: 3}
       propertyPath: m_Name
       value: ShopPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 6660201232222705841, guid: 6ef2f079d18fd6f42a90e925d456b4de, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6957083394732263496, guid: 6ef2f079d18fd6f42a90e925d456b4de, type: 3}
       propertyPath: m_Pivot.x

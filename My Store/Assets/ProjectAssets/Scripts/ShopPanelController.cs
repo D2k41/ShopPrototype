@@ -41,9 +41,13 @@ public class ShopPanelController : MonoBehaviour
         {
             ActionButton.onClick.RemoveAllListeners();
 
+            Color buttonColor = Color.clear;
+
             if (panelType == ShopPanelType.Buy)
             {
                 ActionButton.GetComponentInChildren<TMP_Text>().text = "Buy";
+                buttonColor = new Color(0, 255, 0, 100);
+                ActionButton.GetComponent<Image>().color = buttonColor;
                 ActionButton.onClick.AddListener(() =>
                 {
                     BuyItem(SelectedItem, GameController.Instance.Merchant.ItemsToSell,
@@ -53,6 +57,8 @@ public class ShopPanelController : MonoBehaviour
             else
             {
                 ActionButton.GetComponentInChildren<TMP_Text>().text = "Sell";
+                buttonColor = new Color(255, 0, 0, 100);
+                ActionButton.GetComponent<Image>().color = buttonColor;
                 ActionButton.onClick.AddListener(() =>
                 {
                     SellItem(SelectedItem, GameController.Instance.Merchant.ItemsToSell,
@@ -85,38 +91,52 @@ public class ShopPanelController : MonoBehaviour
 
     private void BuyItem(Item boughtItem, List<Item> merchant, List<Item> player)
     {
-        if (GameController.Instance.PlayerStats.Coins >= boughtItem.Data.BuyPrice)
+        if (boughtItem != null)
         {
-            GameController.Instance.PlayerStats.Coins -= boughtItem.Data.BuyPrice;
+            if (GameController.Instance.PlayerStats.Coins >= boughtItem.Data.BuyPrice)
+            {
+                GameController.Instance.PlayerStats.Coins -= boughtItem.Data.BuyPrice;
 
-            List<Item> newMerchantInventory = merchant;
-            newMerchantInventory.Remove(boughtItem);
-            GameController.Instance.Merchant.ItemsToSell = newMerchantInventory;
+                List<Item> newMerchantInventory = merchant;
+                newMerchantInventory.Remove(boughtItem);
+                GameController.Instance.Merchant.ItemsToSell = newMerchantInventory;
 
-            List<Item> newBackpack = player;
-            newBackpack.Add(boughtItem);
-            GameController.Instance.PlayerInventory.ItemList = newBackpack;
+                List<Item> newBackpack = player;
+                newBackpack.Add(boughtItem);
+                GameController.Instance.PlayerInventory.ItemList = newBackpack;
 
-            InitPanel(newMerchantInventory, newBackpack, GameController.Instance.PlayerStats.Coins, ShopPanelType.Buy);
+                InitPanel(newMerchantInventory, newBackpack, GameController.Instance.PlayerStats.Coins, ShopPanelType.Buy);
+            }
+            else
+            {
+                Debug.Log("No Coins");
+            }
         }
         else
         {
-            Debug.Log("No Coins");
+            Debug.Log("No item selected");
         }
     }
 
     private void SellItem(Item soldItem, List<Item> merchant, List<Item> player)
     {
-        GameController.Instance.PlayerStats.Coins += soldItem.Data.SellPrice;
+        if (soldItem != null)
+        {
+            GameController.Instance.PlayerStats.Coins += soldItem.Data.SellPrice;
 
-        List<Item> newBackpack = player;
-        newBackpack.Remove(soldItem);
-        GameController.Instance.PlayerInventory.ItemList = newBackpack;
+            List<Item> newBackpack = player;
+            newBackpack.Remove(soldItem);
+            GameController.Instance.PlayerInventory.ItemList = newBackpack;
 
-        List<Item> newMerchantInventory = merchant;
-        newMerchantInventory.Add(soldItem);
-        GameController.Instance.Merchant.ItemsToSell = newMerchantInventory;
+            List<Item> newMerchantInventory = merchant;
+            newMerchantInventory.Add(soldItem);
+            GameController.Instance.Merchant.ItemsToSell = newMerchantInventory;
 
-        InitPanel(newMerchantInventory, newBackpack, GameController.Instance.PlayerStats.Coins, ShopPanelType.Sell);
+            InitPanel(newMerchantInventory, newBackpack, GameController.Instance.PlayerStats.Coins, ShopPanelType.Sell);
+        }
+        else
+        {
+            Debug.Log("No item selected");
+        }
     }
 }
