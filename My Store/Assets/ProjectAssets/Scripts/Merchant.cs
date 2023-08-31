@@ -7,7 +7,7 @@ public class Merchant : MonoBehaviour
 {
     public GameObject PromptE;
     public bool Interactable = false;
-    public List<Item> ItemsToSell;
+    public List<ItemData> ItemsToSell;
     private SpriteRenderer spriteRenderer;
     private GameObject player;
 
@@ -21,8 +21,11 @@ public class Merchant : MonoBehaviour
         if (collider.gameObject.CompareTag("Player"))
         {
             player = collider.gameObject;
-            PromptE.SetActive(true);
-            Interactable = true;
+            if (!GameController.Instance.PlayerInteraction.ShopPrompt.activeSelf)
+            {
+                PromptE.SetActive(true);
+                Interactable = true;
+            }
         }
     }
 
@@ -32,7 +35,7 @@ public class Merchant : MonoBehaviour
         {
             player = null;
             PromptE.SetActive(false);
-            GameController.Instance.PlayerInventory.ShopPrompt.SetActive(false);
+            GameController.Instance.PlayerInteraction.ShopPrompt.SetActive(false);
             GameController.Instance.UiController.ShopPanel.gameObject.SetActive(false);
             Interactable = false;
         }

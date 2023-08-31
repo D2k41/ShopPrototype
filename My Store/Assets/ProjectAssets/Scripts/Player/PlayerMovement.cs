@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        playerStats = GetComponent<PlayerStats>();
+        playerStats = GameController.Instance.PlayerStats;
     }
 
     private void Update()

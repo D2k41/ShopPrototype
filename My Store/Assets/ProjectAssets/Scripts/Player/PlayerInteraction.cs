@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
 {
+    public GameObject ShopPrompt;
+
     void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.CompareTag("Merchant"))

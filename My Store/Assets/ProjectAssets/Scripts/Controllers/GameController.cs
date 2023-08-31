@@ -9,7 +9,10 @@ public class GameController : MonoSingleton<GameController>
     public Merchant Merchant;
     public PlayerStats PlayerStats;
     public PlayerInventory PlayerInventory;
+    public PlayerInteraction PlayerInteraction;
     public PlayerMovement PlayerMovement;
+    public PlayerEquipment PlayerEquipment;
+    public ItemsDatabase AllItems;
 
     void Awake()
     {
@@ -24,27 +27,35 @@ public class GameController : MonoSingleton<GameController>
             if (Input.GetKeyDown(KeyCode.E))
             {
                 Merchant.PromptE.SetActive(false);
-                if (!PlayerInventory.ShopPrompt.activeSelf)
+                if (!PlayerInteraction.ShopPrompt.activeSelf)
                 {
-                    PlayerInventory.ShopPrompt.SetActive(true);
+                    PlayerInteraction.ShopPrompt.SetActive(true);
                 }
             }
 
-            if (PlayerInventory.ShopPrompt.activeSelf)
+            if (PlayerInteraction.ShopPrompt.activeSelf)
             {
                 if (Input.GetKeyDown(KeyCode.LeftShift))
                 {
-                    UiController.ShopPanel.InitPanel(Merchant.ItemsToSell, PlayerInventory.ItemList, PlayerStats.Coins, ShopPanelType.Buy);
-                    PlayerInventory.ShopPrompt.SetActive(false);
+                    UiController.ShopPanel.InitPanel(Merchant.ItemsToSell, PlayerInventory.ItemList, PlayerStats.Coins, PanelType.Buy);
+                    PlayerInteraction.ShopPrompt.SetActive(false);
                     Merchant.Interactable = false;
 
                 }
                 else if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    UiController.ShopPanel.InitPanel(Merchant.ItemsToSell, PlayerInventory.ItemList, PlayerStats.Coins, ShopPanelType.Sell);
-                    PlayerInventory.ShopPrompt.SetActive(false);
+                    UiController.ShopPanel.InitPanel(Merchant.ItemsToSell, PlayerInventory.ItemList, PlayerStats.Coins, PanelType.Sell);
+                    PlayerInteraction.ShopPrompt.SetActive(false);
                     Merchant.Interactable = false;
                 }
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            if (!UiController.IsInventoryOpen() && !UiController.IsShopOpen())
+            {
+                UiController.InventoryPanel.InitPanel(PlayerInventory.ItemList, PlayerStats.Coins);
             }
         }
     }

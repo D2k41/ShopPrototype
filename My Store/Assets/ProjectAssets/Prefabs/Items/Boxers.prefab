@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 6280491676273207136}
   - component: {fileID: 4377712518679185861}
   - component: {fileID: 7970111011376202953}
-  - component: {fileID: -4532290864639136699}
+  - component: {fileID: 7161934371305703492}
   m_Layer: 0
-  m_Name: Item
+  m_Name: Boxers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -92,17 +92,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Data:
-    Name: 
-    Description: 
+    Name: Boxers
+    Description: A piece of clothing. Not much, but at least you won't be nude.
     EffectMultiplier: 0
-    Weight: 0
-    SellPrice: 0
-    BuyPrice: 0
+    Weight: 2
+    SellPrice: 3
+    BuyPrice: 15
   Type: 0
-  ClothingType: 0
-  IconName: 
-  PrefabWearableName: 
---- !u!114 &-4532290864639136699
+  ClothingType: 1
+  IconName: Box
+  PrefabWearableName: Clothes/Box
+--- !u!114 &7161934371305703492
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -218,7 +218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:

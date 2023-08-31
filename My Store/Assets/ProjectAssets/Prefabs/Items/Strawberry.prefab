@@ -93,13 +93,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Data:
     Name: Strawberry
-    Description: 
+    Description: A tiny fruit from the lands of SweetFruit.
+    EffectMultiplier: 0
     Weight: 0
     SellPrice: 7
     BuyPrice: 10
   Type: 1
+  ClothingType: 0
   IconName: Strawberries_Done
-  IconImage: {fileID: 2240443783309901547}
+  PrefabWearableName: 
 --- !u!114 &7161934371305703492
 MonoBehaviour:
   m_ObjectHideFlags: 0
