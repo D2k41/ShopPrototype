@@ -9,6 +9,7 @@ public class GameController : MonoSingleton<GameController>
     public Merchant Merchant;
     public PlayerStats PlayerStats;
     public PlayerInventory PlayerInventory;
+    public PlayerMovement PlayerMovement;
 
     void Awake()
     {

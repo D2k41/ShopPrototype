@@ -33,6 +33,7 @@ public class Merchant : MonoBehaviour
             player = null;
             PromptE.SetActive(false);
             GameController.Instance.PlayerInventory.ShopPrompt.SetActive(false);
+            GameController.Instance.UiController.ShopPanel.gameObject.SetActive(false);
             Interactable = false;
         }
     }

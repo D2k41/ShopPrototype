@@ -7,16 +7,21 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float RunThreshold = 0.8f;
+    public float Direction;
+    public bool Running = false;
+    public bool Walking = false;
 
     private float horizontalInput;
     private float verticalInput;
-    
-    private bool running = false;
-    private bool walking = false;
 
     private PlayerStats playerStats;
     private Rigidbody2D rb;
     private Animator animator;
+
+    private void Awake()
+    {
+        GameController.Instance.PlayerMovement = this;
+    }
 
     private void Start()
     {
@@ -64,15 +69,17 @@ public class PlayerMovement : MonoBehaviour
             angle += 360f;
         }
 
+        Direction = angle;
+
         // Update the "Direction" parameter of the animator
         if (animator != null)
         {
             if (horizontalInput != 0 || verticalInput != 0)
             {
-                RegulateDirection(angle);
+                RegulateDirection(Direction);
             }
-            animator.SetBool("Walk", walking);
-            animator.SetBool("Run", running);
+            animator.SetBool("Walk", Walking);
+            animator.SetBool("Run", Running);
         }
     }
 
@@ -80,12 +87,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (horizontalInput != 0 || verticalInput != 0)
         {
-            walking = true;
-            running = Mathf.Abs(horizontalInput) > 0.8f || Mathf.Abs(verticalInput) > RunThreshold;
+            Walking = true;
+            Running = Mathf.Abs(horizontalInput) > 0.8f || Mathf.Abs(verticalInput) > RunThreshold;
         }
         else
         {
-            walking = false;
+            Walking = false;
         }
     }
 

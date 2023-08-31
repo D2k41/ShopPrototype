@@ -71,6 +71,7 @@
     <Compile Include="Assets\ProjectAssets\Scripts\Shop.cs" />
     <Compile Include="Assets\ProjectAssets\Scripts\ItemData.cs" />
     <Compile Include="Assets\ProjectAssets\Scripts\ShopPanelController.cs" />
+    <Compile Include="Assets\ProjectAssets\Scripts\ClothesAnimationController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
