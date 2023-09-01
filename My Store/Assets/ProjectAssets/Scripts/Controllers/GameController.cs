@@ -6,6 +6,7 @@ using UnityEngine;
 public class GameController : MonoSingleton<GameController>
 {
     public UiController UiController;
+    public AudioController AudioController;
     public Merchant Merchant;
     public PlayerStats PlayerStats;
     public PlayerInventory PlayerInventory;

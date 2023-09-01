@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using Code.Helpers;
 using TMPro;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -40,6 +39,7 @@ public class ShopPanelController : MonoBehaviour
 
     public void InitPanel(List<ItemData> merchantItems, List<ItemData> playerBackpack, int playerCoins, PanelType panelType)
     {
+        GameController.Instance.AudioController.PlayMerchantSfx();
         ShopType = panelType;
         MerchantItemsBlocker.SetActive(false);
         BackpackItemsBlocker.SetActive(false);
@@ -48,13 +48,11 @@ public class ShopPanelController : MonoBehaviour
         {
             ActionButton.onClick.RemoveAllListeners();
 
-            Color buttonColor = Color.clear;
-
             if (panelType == PanelType.Buy)
             {
                 BackpackItemsBlocker.SetActive(true);
                 ActionButton.GetComponentInChildren<TMP_Text>().text = "Buy";
-                buttonColor = new Color(0, 255, 0, 100);
+                Color buttonColor = new Color(0, 255, 0, 100);
                 ActionButton.GetComponent<Image>().color = buttonColor;
                 ActionButton.onClick.AddListener(() =>
                 {
@@ -66,7 +64,7 @@ public class ShopPanelController : MonoBehaviour
             {
                 MerchantItemsBlocker.SetActive(true);
                 ActionButton.GetComponentInChildren<TMP_Text>().text = "Sell";
-                buttonColor = new Color(255, 0, 0, 100);
+                Color buttonColor = new Color(255, 0, 0, 100);
                 ActionButton.GetComponent<Image>().color = buttonColor;
                 ActionButton.onClick.AddListener(() =>
                 {
@@ -81,10 +79,10 @@ public class ShopPanelController : MonoBehaviour
         {
             GameObject newItem = Instantiate(ItemPrefab.gameObject, MerchantInventoryContent);
             Item newItemComponent = newItem.GetComponent<Item>();
-            Item ItemFromData = GameController.Instance.AllItems.GetItem(item);
-            if (ItemFromData != null)
+            Item itemFromData = GameController.Instance.AllItems.GetItem(item);
+            if (itemFromData != null)
             {
-                newItemComponent.SetItem(ObjectCloning.Clone(ItemFromData.Data), ItemFromData.Type, ItemFromData.ClothingType, ItemFromData.IconName, ItemFromData.PrefabWearableName);
+                newItemComponent.SetItem(ObjectCloning.Clone(itemFromData.Data), itemFromData.Type, itemFromData.ClothingType, itemFromData.IconName, itemFromData.PrefabWearableName);
             }
         }
 
@@ -94,10 +92,10 @@ public class ShopPanelController : MonoBehaviour
         {
             GameObject newItem = Instantiate(ItemPrefab.gameObject, BackpackContent);
             Item newItemComponent = newItem.GetComponent<Item>();
-            Item ItemFromData = GameController.Instance.AllItems.GetItem(item);
-            if (ItemFromData != null)
+            Item itemFromData = GameController.Instance.AllItems.GetItem(item);
+            if (itemFromData != null)
             {
-                newItemComponent.SetItem(ObjectCloning.Clone(ItemFromData.Data), ItemFromData.Type, ItemFromData.ClothingType, ItemFromData.IconName, ItemFromData.PrefabWearableName);
+                newItemComponent.SetItem(ObjectCloning.Clone(itemFromData.Data), itemFromData.Type, itemFromData.ClothingType, itemFromData.IconName, itemFromData.PrefabWearableName);
             }
         }
 
