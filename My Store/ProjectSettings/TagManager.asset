@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Merchant
   - Item
+  - InventoryTutorial
   layers:
   - Default
   - TransparentFX

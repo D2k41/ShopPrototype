@@ -14,6 +14,15 @@ public class Merchant : MonoBehaviour
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        FillShop();
+    }
+
+    void FillShop()
+    {
+        foreach (var item in GameController.Instance.AllItems.ListOfAllItems)
+        {
+            ItemsToSell.Add(item.Data);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collider)

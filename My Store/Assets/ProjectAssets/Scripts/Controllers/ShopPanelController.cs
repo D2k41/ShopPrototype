@@ -108,26 +108,28 @@ public class ShopPanelController : MonoBehaviour
 
     private void BuyItem(ItemData boughtItem, List<ItemData> merchant, List<ItemData> player)
     {
-        if (boughtItem != null)
+        ItemData itemToBuy = GameController.Instance.AllItems.GetItem(boughtItem).Data;
+
+        if (itemToBuy != null)
         {
-            if (GameController.Instance.PlayerStats.Coins >= boughtItem.BuyPrice)
+            if (GameController.Instance.PlayerStats.Coins >= itemToBuy.BuyPrice)
             {
                 if (GameController.Instance.PlayerInventory.ItemCountLimit < player.Count + 1)
                 {
                     return;
                 }
 
-                GameController.Instance.PlayerStats.Coins -= boughtItem.BuyPrice;
+                GameController.Instance.PlayerStats.Coins -= itemToBuy.BuyPrice;
 
                 List<ItemData> newMerchantInventory = new List<ItemData>(merchant);
-                newMerchantInventory.Remove(boughtItem);
+                newMerchantInventory.Remove(itemToBuy);
                 GameController.Instance.Merchant.ItemsToSell = new List<ItemData>(newMerchantInventory);
 
                 List<ItemData> newBackpack = new List<ItemData>(player);
-                newBackpack.Add(boughtItem);
+                newBackpack.Add(itemToBuy);
                 GameController.Instance.PlayerInventory.ItemList = new List<ItemData>(newBackpack);
 
-                Item itemFromData = GameController.Instance.AllItems.GetItem(boughtItem);
+                Item itemFromData = GameController.Instance.AllItems.GetItem(itemToBuy);
                 if (itemFromData != null)
                 {
                     itemFromData.EquipItem();
@@ -148,17 +150,30 @@ public class ShopPanelController : MonoBehaviour
 
     private void SellItem(ItemData soldItem, List<ItemData> merchant, List<ItemData> player)
     {
-        if (soldItem != null)
+        Item item = GameController.Instance.AllItems.GetItem(soldItem);
+        ItemData itemToSell = item.Data;
+
+        if (itemToSell != null)
         {
-            GameController.Instance.PlayerStats.Coins += soldItem.SellPrice;
+            if (item.Type == ItemType.Clothing)
+            {
+                string itemObjectName = item.PrefabWearableName.Split("/")[1];
+                GameObject clothingItem = GameController.Instance.PlayerEquipment.GetClothingItem(itemObjectName);
+                if (clothingItem != null)
+                {
+                    Destroy(clothingItem);
+                }
+            }
 
-            List<ItemData> newBackpack = player;
-            newBackpack.Remove(soldItem);
-            GameController.Instance.PlayerInventory.ItemList = newBackpack;
+            GameController.Instance.PlayerStats.Coins += itemToSell.SellPrice;
 
-            List<ItemData> newMerchantInventory = merchant;
-            newMerchantInventory.Add(soldItem);
-            GameController.Instance.Merchant.ItemsToSell = newMerchantInventory;
+            List<ItemData> newBackpack = new List<ItemData>(player);
+            newBackpack.Remove(itemToSell);
+            GameController.Instance.PlayerInventory.ItemList = new List<ItemData>(newBackpack);
+
+            List<ItemData> newMerchantInventory = new List<ItemData>(merchant);
+            newMerchantInventory.Add(itemToSell);
+            GameController.Instance.Merchant.ItemsToSell = new List<ItemData>(newMerchantInventory);
 
             InitPanel(newMerchantInventory, newBackpack, GameController.Instance.PlayerStats.Coins, PanelType.Sell);
         }

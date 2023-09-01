@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerInteraction : MonoBehaviour
 {
     public GameObject ShopPrompt;
+    public GameObject InventoryPrompt;
 
     void OnTriggerEnter2D(Collider2D collider)
     {
@@ -16,9 +17,9 @@ public class PlayerInteraction : MonoBehaviour
         {
             
         }
-        else
+        else if (collider.gameObject.CompareTag("InventoryTutorial"))
         {
-            Debug.Log($"Entered: {collider.gameObject}");
+            InventoryPrompt.SetActive(true);
         }
     }
 
@@ -32,9 +33,9 @@ public class PlayerInteraction : MonoBehaviour
         {
 
         }
-        else
+        else if (collider.gameObject.CompareTag("InventoryTutorial"))
         {
-            Debug.Log($"Exited: {collider.gameObject}");
+            InventoryPrompt.SetActive(false);
         }
     }
 }

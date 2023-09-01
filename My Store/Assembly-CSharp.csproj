@@ -57,12 +57,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\ProjectAssets\Scripts\Item.cs" />
+    <Compile Include="Assets\ProjectAssets\Scripts\Controllers\ClothesAnimationController.cs" />
     <Compile Include="Assets\ProjectAssets\Scripts\Enums.cs" />
     <Compile Include="Assets\ProjectAssets\Scripts\Controllers\GameController.cs" />
+    <Compile Include="Assets\ProjectAssets\Scripts\ItemTooltip.cs" />
     <Compile Include="Assets\ProjectAssets\Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\ProjectAssets\Scripts\Player\PlayerInventory.cs" />
     <Compile Include="Assets\ProjectAssets\Scripts\ObjectCloning.cs" />
     <Compile Include="Assets\ProjectAssets\Scripts\Player\PlayerStats.cs" />
+    <Compile Include="Assets\ProjectAssets\Scripts\ItemsDatabase.cs" />
+    <Compile Include="Assets\ProjectAssets\Scripts\Player\PlayerEquipment.cs" />
     <Compile Include="Assets\ProjectAssets\Scripts\Controllers\UiController.cs" />
     <Compile Include="Assets\ProjectAssets\Scripts\MonoSingleton.cs" />
     <Compile Include="Assets\ProjectAssets\Scripts\Player\PlayerInteraction.cs" />
@@ -70,10 +74,6 @@
     <Compile Include="Assets\ProjectAssets\Scripts\Merchant.cs" />
     <Compile Include="Assets\ProjectAssets\Scripts\ItemData.cs" />
     <Compile Include="Assets\ProjectAssets\Scripts\Controllers\ShopPanelController.cs" />
-    <Compile Include="Assets\ProjectAssets\Scripts\Controllers\ClothesAnimationController.cs" />
-    <Compile Include="Assets\ProjectAssets\Scripts\Player\PlayerEquipment.cs" />
-    <Compile Include="Assets\ProjectAssets\Scripts\ItemsDatabase.cs" />
-    <Compile Include="Assets\ProjectAssets\Scripts\ItemTooltip.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

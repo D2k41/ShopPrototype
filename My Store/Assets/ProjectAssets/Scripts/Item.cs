@@ -51,21 +51,24 @@ public class Item : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
         if (Type == ItemType.Clothing)
         {
-            GameController.Instance.PlayerEquipment.UnequipOthersInGroup(ClothingType);
+            GameController.Instance.PlayerEquipment.UnequipOthersInGroup(Data.Name, ClothingType);
 
             if (ClothingType == ClothingType.Head)
             {
-                if (GameController.Instance.PlayerInventory.ItemList.Count(x => x == Data) > 0)
+                if (GameController.Instance.PlayerInventory.ItemList.Count(x => x.Name == Data.Name) > 0)
                 {
-                    if (playerEquipment.Head == null || playerEquipment.Head != this)
+                    if (playerEquipment.Head == null || playerEquipment.Head.Data.Name != Data.Name)
                     {
                         GameObjectWearable = Instantiate(Resources.Load<GameObject>(PrefabWearableName), playerEquipment.ClothingParent);
-                        playerEquipment.Head = this;
+                        playerEquipment.Head = GameController.Instance.AllItems.GetItem(Data);
                         playerEquipment.TotalArmor += Data.EffectMultiplier;
                         playerEquipment.TotalWeight += Data.Weight;
                     }
                     else
                     {
+                        string itemObjectName = PrefabWearableName.Split("/")[1];
+                        GameObjectWearable = GameController.Instance.PlayerEquipment.GetClothingItem(itemObjectName);
+
                         Destroy(GameObjectWearable);
                         playerEquipment.Head = null;
                         playerEquipment.TotalArmor -= Data.EffectMultiplier;
@@ -79,15 +82,18 @@ public class Item : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             {
                 if (GameController.Instance.PlayerInventory.ItemList.Count(x => x.Name == Data.Name) > 0)
                 {
-                    if (playerEquipment.Body != this)
+                    if (playerEquipment.Body == null || playerEquipment.Body.Data.Name != Data.Name)
                     {
                         GameObjectWearable = Instantiate(Resources.Load<GameObject>(PrefabWearableName), playerEquipment.ClothingParent);
-                        playerEquipment.Body = this;
+                        playerEquipment.Body = GameController.Instance.AllItems.GetItem(Data); ;
                         playerEquipment.TotalArmor += Data.EffectMultiplier;
                         playerEquipment.TotalWeight += Data.Weight;
                     }
                     else
                     {
+                        string itemObjectName = PrefabWearableName.Split("/")[1];
+                        GameObjectWearable = GameController.Instance.PlayerEquipment.GetClothingItem(itemObjectName);
+
                         Destroy(GameObjectWearable);
                         playerEquipment.Body = null;
                         playerEquipment.TotalArmor -= Data.EffectMultiplier;

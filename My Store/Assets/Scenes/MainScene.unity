@@ -779,6 +779,7 @@ Transform:
   - {fileID: 150066928}
   - {fileID: 1148159958}
   - {fileID: 1925497546}
+  - {fileID: 1495942260}
   m_Father: {fileID: 900269935}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3319,6 +3320,64 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1495942259
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1495942260}
+  - component: {fileID: 1495942261}
+  m_Layer: 0
+  m_Name: InventoryTutorial
+  m_TagString: InventoryTutorial
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1495942260
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495942259}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.5, y: -0.529, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 342794850}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1495942261
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495942259}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.1}
+  m_EdgeRadius: 0
 --- !u!1 &1549100663
 GameObject:
   m_ObjectHideFlags: 0
@@ -3872,7 +3931,7 @@ MonoBehaviour:
   Armor: 0
   MovementSpeed: 1
   Thirst: 0
-  Coins: 15
+  Coins: 100
 --- !u!114 &1863989076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3908,6 +3967,8 @@ MonoBehaviour:
   - {fileID: 7970111011376202953, guid: 176fc3f07743e274d9566881a721f936, type: 3}
   - {fileID: 7970111011376202953, guid: 7b88099c81cb7cf45a11616c0d5765d9, type: 3}
   - {fileID: 7970111011376202953, guid: dea39f50504bf904ebbd0a0d3f2bbd73, type: 3}
+  - {fileID: 7970111011376202953, guid: 56e017e6431a1ca46b28baf0ed904a67, type: 3}
+  - {fileID: 7970111011376202953, guid: 7932566d68a539b429586c0fdc0516aa, type: 3}
 --- !u!1 &1866415931
 GameObject:
   m_ObjectHideFlags: 0

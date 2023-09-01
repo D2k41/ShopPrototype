@@ -118,37 +118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PromptE: {fileID: 1944126311673969359}
   Interactable: 0
-  ItemsToSell:
-  - Name: Boxers
-    Description: 
-    EffectMultiplier: 0
-    Weight: 2
-    SellPrice: 3
-    BuyPrice: 15
-  - Name: Fstr Outfit
-    Description: 
-    EffectMultiplier: 5
-    Weight: 8
-    SellPrice: 10
-    BuyPrice: 25
-  - Name: Pizza
-    Description: 
-    EffectMultiplier: 0
-    Weight: 0
-    SellPrice: 2
-    BuyPrice: 5
-  - Name: Pumpkin
-    Description: 
-    EffectMultiplier: 0
-    Weight: 0
-    SellPrice: 6
-    BuyPrice: 15
-  - Name: Strawberry
-    Description: 
-    EffectMultiplier: 0
-    Weight: 0
-    SellPrice: 7
-    BuyPrice: 10
+  ItemsToSell: []
 --- !u!50 &-1570717346991114929
 Rigidbody2D:
   serializedVersion: 4
