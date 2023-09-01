@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 15
+  m_SortingOrder: 25
   m_Sprite: {fileID: 1150181976, guid: ffe3528dacf542f4bb12cb286928e921, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -118,12 +118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PromptE: {fileID: 1944126311673969359}
   Interactable: 0
-  ItemsToSell:
-  - {fileID: 7970111011376202953, guid: 176fc3f07743e274d9566881a721f936, type: 3}
-  - {fileID: 7970111011376202953, guid: 176fc3f07743e274d9566881a721f936, type: 3}
-  - {fileID: 7970111011376202953, guid: dea39f50504bf904ebbd0a0d3f2bbd73, type: 3}
-  - {fileID: 7970111011376202953, guid: 7b88099c81cb7cf45a11616c0d5765d9, type: 3}
-  - {fileID: 7970111011376202953, guid: 176fc3f07743e274d9566881a721f936, type: 3}
+  ItemsToSell: []
 --- !u!50 &-1570717346991114929
 Rigidbody2D:
   serializedVersion: 4

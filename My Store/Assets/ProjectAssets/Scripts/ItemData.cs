@@ -8,7 +8,8 @@ public class ItemData
 {
     public string Name;
     public string Description;
-    public float Weight;
+    public float EffectMultiplier; //Armor, backpack capacity, thirst
+    public float Weight; //Affects player speed
     public int SellPrice;
     public int BuyPrice;
 }

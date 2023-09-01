@@ -94,13 +94,14 @@ MonoBehaviour:
   Data:
     Name: 
     Description: 
+    EffectMultiplier: 0
     Weight: 0
     SellPrice: 0
     BuyPrice: 0
   Type: 0
-  Icon: {fileID: 0}
-  IconImage: {fileID: 2240443783309901547}
-  ButtonComponent: {fileID: 0}
+  ClothingType: 0
+  IconName: 
+  PrefabWearableName: 
 --- !u!114 &-4532290864639136699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,7 +218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:

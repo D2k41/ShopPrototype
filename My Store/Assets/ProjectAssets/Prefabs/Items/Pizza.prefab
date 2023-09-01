@@ -93,13 +93,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Data:
     Name: Pizza
-    Description: 
+    Description: A Tasty circle cut in triangles, but without the square box.
+    EffectMultiplier: 0
     Weight: 0
     SellPrice: 2
     BuyPrice: 5
   Type: 1
+  ClothingType: 0
   IconName: Pizza_Done
-  IconImage: {fileID: 2240443783309901547}
+  PrefabWearableName: 
 --- !u!114 &-8667475409553327472
 MonoBehaviour:
   m_ObjectHideFlags: 0
