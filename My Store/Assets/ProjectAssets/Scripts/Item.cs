@@ -1,8 +1,5 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
-using Code.Helpers;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -35,6 +32,8 @@ public class Item : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void SelectItem()
     {
+        GameController.Instance.AudioController.PlayButtonSfx();
+
         if (GameController.Instance.UiController.IsShopOpen())
         {
             GameController.Instance.UiController.ShopPanel.SelectItem(this);
